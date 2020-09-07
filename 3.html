@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      * { box-sizing: border-box; }
+      #loto-outer { position: relative; overflow: hidden; width: 430px; height: 60px; }
+      /* div u koji može da stane 7, mi dole pravimo mnogo više ali smo stavili overflow da ne radimo logiku za zaustavljanje petlje posle 7 izvršenih */
+      #loto-content div, #loto-loop { width: 50px; height: 50px; float: left; margin-left: 10px; text-align: center; line-height: 50px; border-radius: 100%; background: radial-gradient(circle at 80px 50px, #333, #ff0); font-weight: bold;font-size: 22px;color: #333;}
+      #loto-loop { position: absolute; top: 0; left: 0; z-index: 35; /*background:red !important;*/}
+    </style>
+</head>
+<body>
+<div id="loto-outer" style="position:relative; overflow:hidden; width:430px; height:60px">
+    <div id="loto-content"></div>
+    <div id="loto-loop"></div>
+</div>
+
+<script>
+
+  loto(7, 39)
+
+  function loto (nums, numsFrom) {
+    var brojac = 0, // koliko puta smo prošli kroz setInterval
+      izvuceno = 0,// koliko brojeva je izvučeno
+      lotoLoop = document.getElementById('loto-loop')// div koji služi da u njemu vrtimo brojeve, nema veze sa onim gde se ispisuje
+    setInterval(function () {
+      if (izvuceno < nums) { // ako nismo izvukli nums
+        brojac++
+        lotoLoop.textContent = Math.floor(Math.random() * numsFrom) + 1 // upisujemo broj u random div
+        if (brojac % 40 === 0) { // na svakih 40 ispisivanja ulazimo u petlju i ispisujemo nov div
+          novBroj = Math.floor(Math.random() * numsFrom) + 1 // generišemo random broj između 1 i numsFrom
+          if (!document.getElementById('broj' + novBroj)) { // ako ne postoji id brojOvajRandom (sprečavamo da se 2x upiše isti broj)
+            ++izvuceno // povećavamo broj izvučenih brojeva za 1
+            lotoLoop.style.left = (izvuceno - 1) * 60 + 60 + 'px' // pomeramo udesno div sa kojim simuliramo brojeve koji se vrte
+            document.getElementById('loto-content').innerHTML += '<div id="broj' + novBroj + '">' + novBroj + '</div>' // upisujemo novi broj u loto content
+          } else --brojac; // možemo da odkomentarišemo ovu liniju ako hoćemo da ne ide 40x ponovo kroz petlju ako je bio duplikat
+        }
+      }
+    }, 20)
+  }
+
+</script>
+</body>
+</html>

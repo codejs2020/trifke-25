@@ -1,0 +1,27 @@
+table{ border-spacing:0;border-collapse:collapse; position:relative;top:5px;}
+td{  text-align:center; height:16px; width:16px;border:0;padding:0;}
+td:not(.open){ background:url(img.gif) no-repeat -0px -39px !important;}
+#container_outer{ display:inline-block; border:ridge #C0C0C0 5px;background:#C0C0C0}
+#container{ display:inline-block; border:double #C0C0C0 5px;background:#C0C0C0 }
+#controls{position:relative;width:100%;}
+#points, #timer{ width:39px; position:absolute;text-align:right;background:url(img/time0.gif) repeat-x;height:35px;top:0;}
+#smiley{ margin:auto; display:block;}
+#smiley:active{ position:relative;top:1px;left:1px;}
+#points{left:0}
+#timer{ right:0 }
+#board{ clear:both; position:relative;}
+.sus0, .sus1, .sus2, .sus3, .sus4, .sus5, .sus6, .sus7, .sus8,.flag{ background:#C0C0C0 url(img.gif) no-repeat; }
+.sus1{ background-position:-16px -23px; }
+.sus2{ background-position:-32px -23px; }
+.sus3{ background-position:-48px -23px; }
+.sus4{ background-position:-64px -23px; }
+.sus5{ background-position:-80px -23px; }
+.sus6{ background-position:-96px -23px; }
+.sus7{ background-position:-112px -23px; }
+.sus8{ background-position:-128px -23px; }
+.sus0{ background-position:-0px -23px; }
+.bomba{background:#C0C0C0 url(img/bomb.gif) no-repeat 0 0;}
+.death{background:#C0C0C0 url(img/death.gif) no-repeat 0 0;}
+
+#board td.flag{  background:url(img/bombflagged.gif) 0 0 !important;}
+.open{}

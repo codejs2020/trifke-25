@@ -1,0 +1,24 @@
+<!--  zamenite $$$$$ sa odgovarajućim tekstom -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kreiranje select taga sa domom</title>
+</head>
+<body>
+<script>
+  function kreirajSelectListuGodine (pocetak, kraj) {
+    const selekt = document.createElement('select')
+    for (let i = pocetak; i <= kraj; i++) {
+      const opcija = document.createElement('option')
+      opcija.setAttribute('value', i)
+      opcija.textContent = i
+      selekt.appendChildo(opcija)
+    }
+    return selekt
+  }
+
+  document.body.appendChild(kreirajSelectListuGodine(1980, 2017))
+</script>
+</body>
+</html>

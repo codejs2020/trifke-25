@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="tic-tac-toe.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div id="final_result"><span>0</span>:<span>0</span></div>
+            <div id="game_area">
+                <div id="game">
+                    <div id="field1"></div>
+                    <div id="field2"></div>
+                    <div id="field3"></div>
+                    <div id="field4"></div>
+                    <div id="field5"></div>
+                    <div id="field6"></div>
+                    <div id="field7"></div>
+                    <div id="field8"></div>
+                    <div id="field9"></div>
+                </div>
+                <div id="game_overlay"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form action="" class="form-inline">
+                <input type="button" value="Start game" id="start_game" class="btn btn-success">
+                <input type="button" value="Cancel" id="cancel_game" class="btn btn-danger">
+                <div class="form-group">
+                    <label for="player1">Player 1</label>
+
+                    <input class="form-control" type="text" name="player1" id="player1" value="Player 1" required>
+                    <label for="robot1">Robot:</label> <input class="form-control" type="checkbox" name="robot" id="robot1">
+                </div>
+                <div class="form-group">
+                    <label for="player2">Player 2</label>
+                    <input class="form-control" type="text" name="player2" id="player2" value="Player 2" required>
+                    <label for="robot2">Robot:</label> <input class="form-control" type="checkbox" name="robot2" id="robot2">
+                </div>
+                <hr>
+                <input type="button" value="Reset stats" id="reset_stats" class="btn btn-danger">
+                <input type="button" value="Switch sides" id="switch_sides" class="btn btn-success">
+            </form>
+
+            <div id="preview-div">
+                <h3>Preview of game from history</h3>
+                <div id="gamePreview">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <br>
+                <div style="clear:both;">Current turn:
+                    <strong id="current_turn"></strong>
+                </div>
+                <br>
+
+                <ul class="pagination pagination-sm">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous" id="prev">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link go_to_page" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link go_to_page" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link go_to_page" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link go_to_page" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link go_to_page" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link go_to_page" href="#">6</a></li>
+                    <li class="page-item"><a class="page-link go_to_page" href="#">7</a></li>
+                    <li class="page-item"><a class="page-link go_to_page" href="#">8</a></li>
+                    <li class="page-item"><a class="page-link go_to_page" href="#">9</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next" id="next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <h2>Game History</h2>
+            <div id="results_log"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="app2.js"></script>
+</body>
+</html>
